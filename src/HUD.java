@@ -22,6 +22,8 @@ public class HUD {
 	TrueTypeFont font = new TrueTypeFont(awtFont, true);
 	Color transColor = new Color(0f, 0f, 0f, .75f);
 	
+	//test
+	
 	///////////////////
 	///END VARIABLES///
 	///////////////////
