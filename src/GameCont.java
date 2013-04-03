@@ -5,6 +5,8 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
+// This is also some new code testing github.
+
 public class GameCont extends BasicGame{
 	
 	Player player;
