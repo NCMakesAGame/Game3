@@ -13,6 +13,8 @@ public class HUD {
 	//START VARIABLES//
 	///////////////////
 
+	//Newest Version of Testing!
+	
 	private float posX;
 	private float posY;
 	private float camX;
