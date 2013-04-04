@@ -70,9 +70,9 @@ public class HUD {
 	
 	public void drawHealthBar(Graphics g) {
 		g.setColor(Color.black);
-		g.drawRect(posX, posY - 6, 30, 4);
+		g.drawRect(posX, posY - 6, 31, 4);
 		g.setColor(Color.red);
-		g.fillRect(posX + 1, posY - 5, (29 * (healthP / 100)), 3);
+		g.fillRect(posX + 1, posY - 5, (30 * (healthP / 100)), 3);
 		}
 	
 	public void drawBackgrounds(Graphics g) {
