@@ -30,6 +30,7 @@ public class movingGameObject extends visibleGameObject{
 	}
 	
 	public movingGameObject(boolean isAnch, int ssd, float xPos, float yPos, int ht, int wdth, String LeftFile, String RightFile, String standingFile, float spdX, float spdY, float maxHt, float hlth, float dmg) throws SlickException{
+
 		isAnchored=isAnch;
 		spriteSheetDuration=ssd;
 		x=xPos;
@@ -63,7 +64,7 @@ public class movingGameObject extends visibleGameObject{
 		x-=speedX;
 		objectPolygon.setX(x);
 	}
-	public void isHit(float dmg){
+	public void Hit(float dmg){
 
 		health-=damage;
 		if (health<=0){

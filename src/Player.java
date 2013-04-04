@@ -74,6 +74,21 @@ public class Player extends movingGameObject {
 				jumpChange = 0;
 			}
 
+			if (input.isKeyDown(Input.KEY_ADD)) {
+				System.out.println(health);
+				health+=10;
+			}
+			
+			if (input.isKeyDown(Input.KEY_SUBTRACT)) {
+				System.out.println(health);
+				health-=10;
+			}
+			
+			if (input.isKeyPressed(Input.KEY_H)) {
+				y=0;
+				objectPolygon.setY(y);
+			}
+			
 			//Jump Action
 			if(objState==objectState.Jumping){
 				y-=(speedY - jumpChange);

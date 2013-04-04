@@ -4,9 +4,9 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.tiled.*;
 
-// This is also some new code testing github.
-// This is some new code Deanna added
+
 
 public class GameCont extends BasicGame{
 	
@@ -15,7 +15,10 @@ public class GameCont extends BasicGame{
 	static int WIDTH=1024;
 	static int HEIGHT =760;
     float gravity=3.7f;
+    
     BlockMap map;
+   TiledMapPlus backMap;
+    
     boolean moveCamera=false;
     Camera camera;
     visibleGameObject blood;
@@ -33,6 +36,7 @@ public class GameCont extends BasicGame{
 		//Bird=new Image("MainBird.png");
 		
 		player=new Player(false, 150, 300,200,64,32, "Leftss.png", "Rightss.png","Rightss.png", 3.5f, 9.0f,200.0f, 100,10); 
+		backMap=new TiledMapPlus("/FirstArea.tmx");
 		map=new BlockMap("/FirstArea.tmx");
 		camera=new Camera(gc,map);
 		birdEnemy=new Enemy(false, 150, 200f,200f,96,64, "MainBird.png","MainBird.png","MainBird.png",2.0f,10.0f,200.0f,  300, 4);
@@ -49,10 +53,12 @@ public class GameCont extends BasicGame{
 		player.updatePlayer(gc, delta, map, input, gravity);
 		camera.centerOn(player.getX(), player.getY());
 		birdEnemy.updateEnemy(gc, delta, player.getX(), player.getY(), map, gravity);
-		if (checkForHit()){
-			blood.setX(player.getX());
-			blood.setY(player.getY());
-		}
+		//check whats on screen, add to list, pass to player
+		birdEnemy.checkIfOnScreen(gc);
+		//if (checkForHit()){
+			//blood.setX(player.getX());
+	//		blood.setY(player.getY());
+	//	}
 		
 		hud.setValues(player.getX(), player.getY(), camera.getX(), camera.getY(), player.getHealth());
 		
@@ -60,7 +66,7 @@ public class GameCont extends BasicGame{
 }
 	public boolean checkForHit(){
 		if (player.getPolygon().contains(birdEnemy.getPolygon())){
-			player.isHit(birdEnemy.getDamage());
+			//player.isHit(birdEnemy.getDamage());
 			return true;
 			}
 		return false;
@@ -71,8 +77,10 @@ public class GameCont extends BasicGame{
 		{
 			g.translate(-x, 0);
 		}*/
+		backMap.getLayer("Back").render(0, 0, 0, 0, WIDTH/32, (WIDTH/32)*(HEIGHT/32), false, 500,500);
 		camera.drawMap();
 		camera.translateGraphics();
+		
 		
 		
 	//	Bird.draw(x,y,scale);

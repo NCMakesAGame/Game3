@@ -62,9 +62,18 @@ public class HUD {
 	
 	public void drawHud(Graphics g) {
 		this.drawPos(g);
-		this.drawBackgrounds(g);
+		
+		this.drawHealthBar(g);
+		//this.drawBackgrounds(g);
 		this.drawHealth(g);
 	}
+	
+	public void drawHealthBar(Graphics g) {
+		g.setColor(Color.black);
+		g.drawRect(posX, posY - 6, 30, 4);
+		g.setColor(Color.red);
+		g.fillRect(posX + 1, posY - 5, (29 * (healthP / 100)), 3);
+		}
 	
 	public void drawBackgrounds(Graphics g) {
 		g.setColor(transColor);

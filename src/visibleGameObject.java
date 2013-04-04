@@ -7,6 +7,7 @@ import org.newdawn.slick.geom.Polygon;
 
 
 public class visibleGameObject {
+	boolean onScreen;
 	boolean isAnchored;
 	float x, y;
 	int height, width, spriteSheetDuration;
@@ -18,9 +19,11 @@ public class visibleGameObject {
 	objectDirection objDirection;
 	
 	public visibleGameObject(){
+		onScreen=false;
 		
 	}
 	public visibleGameObject(boolean isAnch,int ssd, float xPos, float yPos, int ht, int wdth, String ss, boolean direction) throws SlickException{//true right false left
+		onScreen=false;
 		if (direction){
 			objDirection=objectDirection.Right;
 		}
@@ -38,9 +41,12 @@ public class visibleGameObject {
 		objectPolygon=new Polygon(new float[]{x,y,x+width,y,x+width,y+height,x,y+height});
 		
 	}
-	//public void update(GameContainer gc, int delta, float gravity, BlockMap map) throws SlickException{
-	//	applyGravity(gravity, map);
-	//}
+	public void checkIfOnScreen(GameContainer gc){
+		//if (x<gc.get)
+	}
+	public void update(GameContainer gc, int delta, float gravity, BlockMap map) throws SlickException{
+	
+	}
 	
 	
 	public void setX(float xpos){
