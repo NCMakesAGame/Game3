@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="500" height="500" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tileMap" tilewidth="32" tileheight="32">
-  <image source="tileMap.png" width="3200" height="3200"/>
+  <image source="../../../workspace/Game3/tileMap.png" width="3200" height="3200"/>
   <tile id="8">
    <properties>
     <property name="Blocked" value="True"/>
